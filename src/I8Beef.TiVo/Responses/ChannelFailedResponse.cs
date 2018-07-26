@@ -15,6 +15,14 @@ namespace I8Beef.TiVo.Responses
         public override string Code { get { return "CH_FAILED"; } }
 
         /// <summary>
+        /// Reason for the failure.
+        /// </summary>
+        public string Reason { get; set; }
+
+        /// <inheritdoc />
+        public override string Value { get { return Reason; } }
+
+        /// <summary>
         /// Parses a commands string to return an instance of this <see cref="Response"/>.
         /// </summary>
         /// <param name="responseString">The response string to parse.</param>
@@ -25,9 +33,9 @@ namespace I8Beef.TiVo.Responses
             if (!matches.Success)
                 throw new ArgumentException("Response string not recognized: " + responseString);
 
-            var value = matches.Groups[1].Value;
+            var reason = matches.Groups[1].Value;
 
-            return new ChannelFailedResponse { Value = value };
+            return new ChannelFailedResponse { Reason = reason };
         }
     }
 }

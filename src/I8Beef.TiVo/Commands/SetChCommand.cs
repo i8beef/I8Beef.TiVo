@@ -12,25 +12,38 @@ namespace I8Beef.TiVo.Commands
         public override string Code { get { return "SETCH"; } }
 
         /// <summary>
+        /// Channel.
+        /// </summary>
+        public int Channel { get; set; }
+
+        /// <summary>
+        /// Subchannel.
+        /// </summary>
+        public int? Subchannel { get; set; }
+
+        /// <summary>
         /// Parses a commands string to return an instance of this <see cref="Command"/>.
         /// </summary>
         /// <param name="commandString">The command string to parse.</param>
         /// <returns>The <see cref="Command"/>.</returns>
         public static Command Parse(string commandString)
         {
-            var matches = Regex.Match(commandString, @"^SETCH (.*)$");
+            var matches = Regex.Match(commandString, @"^SETCH (\d*)\s?(\d*)?$");
             if (!matches.Success)
                 throw new ArgumentException("Command string not recognized: " + commandString);
 
-            var value = matches.Groups[1].Value;
+            var channel = int.Parse(matches.Groups[1].Value);
+            int? subchannel = null;
+            if (!string.IsNullOrEmpty(matches.Groups[2].Value))
+                subchannel = int.Parse(matches.Groups[2].Value);
 
-            return new IrCommand { Value = value };
+            return new SetChCommand { Channel = channel, Subchannel = subchannel };
         }
 
         /// <inheritdoc/>
         public override string GetTelnetCommand()
         {
-            return $"{Code} {Value}";
+            return $"{Code} {Channel}" + (Subchannel.HasValue ? $" {Subchannel}" : string.Empty);
         }
     }
 }

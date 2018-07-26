@@ -18,6 +18,6 @@
         /// <summary>
         /// TiVo response value.
         /// </summary>
-        public string Value { get; set; }
+        public abstract string Value { get; }
     }
 }

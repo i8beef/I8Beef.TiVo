@@ -12,6 +12,11 @@ namespace I8Beef.TiVo.Commands
         public override string Code { get { return "IRCODE"; } }
 
         /// <summary>
+        /// IR Code to send.
+        /// </summary>
+        public string IrCode { get; set; }
+
+        /// <summary>
         /// Parses a commands string to return an instance of this <see cref="Command"/>.
         /// </summary>
         /// <param name="commandString">The command string to parse.</param>
@@ -22,15 +27,15 @@ namespace I8Beef.TiVo.Commands
             if (!matches.Success)
                 throw new ArgumentException("Command string not recognized: " + commandString);
 
-            var value = matches.Groups[1].Value;
+            var irCode = matches.Groups[1].Value;
 
-            return new IrCommand { Value = value };
+            return new IrCommand { IrCode = irCode };
         }
 
         /// <inheritdoc/>
         public override string GetTelnetCommand()
         {
-            return $"{Code} {Value}";
+            return $"{Code} {IrCode}";
         }
     }
 }

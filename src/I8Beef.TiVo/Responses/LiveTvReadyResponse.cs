@@ -14,6 +14,9 @@ namespace I8Beef.TiVo.Responses
         /// <inheritdoc/>
         public override string Code { get { return "LIVETV_READY"; } }
 
+        /// <inheritdoc />
+        public override string Value { get { return null; } }
+
         /// <summary>
         /// Parses a commands string to return an instance of this <see cref="Response"/>.
         /// </summary>
@@ -25,9 +28,7 @@ namespace I8Beef.TiVo.Responses
             if (!matches.Success)
                 throw new ArgumentException("Response string not recognized: " + responseString);
 
-            var value = matches.Groups[1].Value;
-
-            return new LiveTvReadyResponse { Value = value };
+            return new LiveTvReadyResponse();
         }
     }
 }
