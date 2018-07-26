@@ -137,7 +137,7 @@ namespace I8Beef.TiVo
                 _resultTaskCompletionSources[command.Code] = resultTaskCompletionSource;
 
                 // Start the sending
-                Send(command.GetTelnetCommand());
+                Send(command.GetTelnetCommand().ToUpper());
 
                 // Await, to make sure there wasn't an error
                 var task = await Task.WhenAny(resultTaskCompletionSource.Task, Task.Delay(timeout)).ConfigureAwait(false);
