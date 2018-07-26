@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageLicenseUrl>https://github.com/i8beef/I8Beef.TiVo/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/i8beef/I8Beef.TiVo</PackageProjectUrl>
+    <PackageTags>TiVo</PackageTags>
+    <Copyright>Copyright © 2018</Copyright>
+    <Description>A library for interacting with TiVo units over TCP.</Description>
+    <Company>Michael Hallock</Company>
+    <Authors>Michael Hallock</Authors>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\I8Beef.TiVo.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\I8Beef.TiVo.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="I8Beef.CodeAnalysis.RuleSet" Version="1.0.15">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

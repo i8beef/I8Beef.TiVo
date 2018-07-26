@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I8Beef.TiVo", "I8Beef.TiVo\I8Beef.TiVo.csproj", "{AE8D33EC-4D88-4897-BED3-8C71E19A37B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I8Beef.TiVo.TestClient", "I8Beef.TiVo.TestClient\I8Beef.TiVo.TestClient.csproj", "{EE8595BC-46AE-44B5-B557-2B2A91892260}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE8D33EC-4D88-4897-BED3-8C71E19A37B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8D33EC-4D88-4897-BED3-8C71E19A37B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8D33EC-4D88-4897-BED3-8C71E19A37B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8D33EC-4D88-4897-BED3-8C71E19A37B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8595BC-46AE-44B5-B557-2B2A91892260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8595BC-46AE-44B5-B557-2B2A91892260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8595BC-46AE-44B5-B557-2B2A91892260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8595BC-46AE-44B5-B557-2B2A91892260}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A865038-A0D1-438A-A143-224AA590B40E}
+	EndGlobalSection
+EndGlobal
