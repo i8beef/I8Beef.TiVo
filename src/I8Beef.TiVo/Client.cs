@@ -13,10 +13,8 @@ using I8Beef.TiVo.Responses;
 
 namespace I8Beef.TiVo
 {
-    /// <summary>
-    /// TiVo client.
-    /// </summary>
-    public class Client : IDisposable
+    /// <inheritdoc />
+    public class Client : IClient
     {
         // A lookup to correlate request and responses
         private readonly IDictionary<string, TaskCompletionSource<Response>> _resultTaskCompletionSources = new ConcurrentDictionary<string, TaskCompletionSource<Response>>();
@@ -41,41 +39,25 @@ namespace I8Beef.TiVo
             _port = port;
         }
 
-        /// <summary>
-        /// The event that is raised when an unrecoverable error condition occurs.
-        /// </summary>
+        /// <inheritdoc />
         public event EventHandler<ErrorEventArgs> Error;
 
-        /// <summary>
-        /// The event that is raised when messages are received.
-        /// </summary>
+        /// <inheritdoc />
         public event EventHandler<MessageReceivedEventArgs> MessageReceived;
 
-        /// <summary>
-        /// The event that is raised when messages are sent.
-        /// </summary>
+        /// <inheritdoc />
         public event EventHandler<MessageSentEventArgs> MessageSent;
 
-        /// <summary>
-        /// The event that is raised when and event is received from the TiVo unit.
-        /// </summary>
+        /// <inheritdoc />
         public event EventHandler<ResponseEventArgs> EventReceived;
 
-        /// <summary>
-        /// Send command to the TiVo.
-        /// </summary>
-        /// <param name="command">The <see cref="Command"/> to send.</param>
-        /// <returns>Awaitable Task.</returns>
+        /// <inheritdoc />
         public async Task SendCommandAsync(Command command)
         {
             await FireAndForgetAsync(command).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Send command to the TiVo.
-        /// </summary>
-        /// <param name="command">The <see cref="Command"/> to send.</param>
-        /// <returns>The response.</returns>
+        /// <inheritdoc />
         public async Task<Response> SendQueryAsync(Command command)
         {
             return await RequestResponseAsync(command).ConfigureAwait(false);
@@ -229,9 +211,7 @@ namespace I8Beef.TiVo
 
         #region Connection management
 
-        /// <summary>
-        /// Connect to TiVo.
-        /// </summary>
+        /// <inheritdoc />
         public void Connect()
         {
             // Establish a connection
@@ -256,9 +236,7 @@ namespace I8Beef.TiVo
                     }, TaskContinuationOptions.OnlyOnFaulted);
         }
 
-        /// <summary>
-        /// Allows for explicit closing of session.
-        /// </summary>
+        /// <inheritdoc />
         public void Close()
         {
             Dispose();
