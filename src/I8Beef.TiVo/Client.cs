@@ -18,13 +18,13 @@ namespace I8Beef.TiVo
     {
         // A lookup to correlate request and responses
         private readonly IDictionary<string, TaskCompletionSource<Response>> _resultTaskCompletionSources = new ConcurrentDictionary<string, TaskCompletionSource<Response>>();
-
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private readonly object _writeLock = new object();
-        private bool _disposed;
-        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
-        private string _host;
-        private int _port;
+        private readonly string _host;
+        private readonly int _port;
+
+        private bool _disposed;
         private TcpClient _client;
         private NetworkStream _stream;
 
@@ -105,6 +105,7 @@ namespace I8Beef.TiVo
         /// </summary>
         /// <param name="command">The message to be sent.</param>
         /// <param name="timeout">Time to wait for an error response.</param>
+        /// <param name="cancellationToken">Cancellation token.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         private async Task FireAndForgetAsync(Command command, int timeout = 50)
         {

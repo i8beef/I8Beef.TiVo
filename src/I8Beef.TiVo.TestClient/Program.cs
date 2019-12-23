@@ -13,18 +13,8 @@ namespace I8Beef.TiVo.TestClient
         /// <summary>
         /// Main entry point for test program.
         /// </summary>
-        /// <param name="args">Command line arguments</param>
-        public static void Main(string[] args)
-        {
-            Task.Run(async () => await MainAsync(args)).Wait();
-        }
-
-        /// <summary>
-        /// Main entry point for test program.
-        /// </summary>
-        /// <param name="args">Command line arguments</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public static async Task MainAsync(string[] args)
+        public static async Task Main()
         {
             var host = "";
 
