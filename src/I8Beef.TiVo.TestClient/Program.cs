@@ -37,12 +37,14 @@ namespace I8Beef.TiVo.TestClient
                         {
                             if (commandString.StartsWith("SETCH"))
                             {
-                                var response = await client.SendQueryAsync(command);
+                                var response = await client.SendQueryAsync(command)
+                                    .ConfigureAwait(false);
                                 Console.WriteLine($"New value for {response.GetType()}: {response.Value}");
                             }
                             else
                             {
-                                await client.SendCommandAsync(command);
+                                await client.SendCommandAsync(command)
+                                    .ConfigureAwait(false);
                             }
                         }
                         else

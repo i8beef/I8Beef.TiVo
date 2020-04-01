@@ -105,7 +105,6 @@ namespace I8Beef.TiVo
         /// </summary>
         /// <param name="command">The message to be sent.</param>
         /// <param name="timeout">Time to wait for an error response.</param>
-        /// <param name="cancellationToken">Cancellation token.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         private async Task FireAndForgetAsync(Command command, int timeout = 50)
         {
