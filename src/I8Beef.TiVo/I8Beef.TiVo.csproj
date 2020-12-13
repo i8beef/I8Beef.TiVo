@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <PackageLicenseUrl>https://github.com/i8beef/I8Beef.TiVo/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/i8beef/I8Beef.TiVo</PackageProjectUrl>
     <PackageTags>TiVo</PackageTags>
     <Copyright>Copyright © 2018</Copyright>
@@ -13,6 +12,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <Version>1.0.0.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
