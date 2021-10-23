@@ -1,7 +1,7 @@
 # I8Beef.TiVo
 
-[![Build status](https://ci.appveyor.com/api/projects/status/md6uek55tmmemvq7/branch/master?svg=true)](https://ci.appveyor.com/project/i8beef/i8beef-tivo/branch/release)
-[![Build status](https://ci.appveyor.com/api/projects/status/md6uek55tmmemvq7/branch/master?svg=true)](https://ci.appveyor.com/project/i8beef/i8beef-tivo/branch/master)
+![Build](https://github.com/i8beef/I8Beef.TiVoactions/workflows/build.yml/badge.svg?branch=master)
+![Release](https://github.com/i8beef/I8Beef.TiVo/actions/workflows/release.yml/badge.svg)
 
 I8Beef.TiVo is a library for interacting with TiVo over TCP.
 
