@@ -1,6 +1,6 @@
 # I8Beef.TiVo
 
-![Build](https://github.com/i8beef/I8Beef.TiVoactions/workflows/build.yml/badge.svg?branch=master)
+![Build](https://github.com/i8beef/I8Beef.TiVo/actions/workflows/build.yml/badge.svg?branch=master)
 ![Release](https://github.com/i8beef/I8Beef.TiVo/actions/workflows/release.yml/badge.svg)
 
 I8Beef.TiVo is a library for interacting with TiVo over TCP.
